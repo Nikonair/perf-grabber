@@ -39,7 +39,7 @@ print("File saved to current directory")
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 cnopts = pysftp.CnOpts()                                                                                                        # Comment out this part if server upload is not required
 cnopts.hostkeys = None
-print("Credentials for SFTP to Droppy\n")
+print("Credentials required for SFTP\n")
 with pysftp.Connection('IPADDRESS', username=input("Username: "), password=getpass.getpass(), cnopts=cnopts) as sftp:           # Replace IPADRESS with desired IP
     with sftp.cd('SERVERPATH'):                                                                                             	# Replace SERVERPATH with absolute path you want to save to
         sftp.put(f'{filename}.xlsx', preserve_mtime=True)
